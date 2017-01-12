@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">]
+
+        <Button
+            android:text="C"
+            android:textSize="25sp"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnLimpar"
+            android:onClick="limparTela"
+            android:background="@android:color/holo_blue_bright"
+            android:textColor="#fff"/>
+
+        <TextView
+            android:id="@+id/txtTela"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:textSize="90dp"
+            android:textAlignment="viewEnd"
+            android:hint="0"
+            android:background="#dddddd" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal"
+        android:background="#2e9bbe">
+
+        <Button
+            android:text="7"
+            android:textSize="25sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/btn7"
+            android:onClick="preencherTela" android:tag="7"
+            android:background="#2e9bbe"
+            android:textColor="#fff"/>
+
+        <Button
+            android:text="8"
+            android:textSize="25sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/btn8"
+            android:onClick="preencherTela" android:tag="8"
+            android:background="#2e9bbe"
+            android:textColor="#fff"/>
+
+        <Button
+            android:text="9"
+            android:textSize="25sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/btn9"
+            android:onClick="preencherTela" android:tag="9"
+            android:background="#2e9bbe"
+            android:textColor="#fff"/>
+
+
+        <Button
+            android:text="/"
+            android:textSize="25sp"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_x="115dp"
+            android:layout_y="90dp"
+            android:id="@+id/btnDivisao"
+            android:onClick="setarOperador" android:tag="/"
+            android:background="#2e9bbe"
+            android:textColor="#fff"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <Button
+            android:text="4"
+            android:textSize="25sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/btn4"
+            android:background="#2e9bbe"
+            android:textColor="#fff"
+            android:onClick="preencherTela" android:tag="4"/>
+
+        <Button
+            android:text="5"
+            android:textSize="25sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/btn5"
+            android:background="#2e9bbe"
+            android:textColor="#fff"
+            android:onClick="preencherTela" android:tag="5"/>
+
+        <Button
+            android:text="6"
+            android:textSize="25sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/btn6"
+            android:background="#2e9bbe"
+            android:textColor="#fff"
+            android:onClick="preencherTela" android:tag="6"/>
+
+        <Button
+            android:text="x"
+            android:textSize="25sp"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnMultiplicacao"
+            android:background="#2e9bbe"
+            android:textColor="#fff"
+            android:onClick="setarOperador" android:tag="x"/>
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <Button
+            android:text="1"
+            android:textSize="25sp"
+            android:background="#2e9bbe"
+            android:layout_weight="2"
+            android:textColor="#fff"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btn1"
+            android:onClick="preencherTela" android:tag="1"/>
+
+        <Button
+            android:text="2"
+            android:textSize="25sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:id="@+id/btn2"
+            android:background="#2e9bbe"
+            android:textColor="#fff"
+            android:onClick="preencherTela" android:tag="2"/>
+
+        <Button
+            android:text="3"
+            android:textSize="25sp"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btn3"
+            android:background="#2e9bbe"
+            android:textColor="#fff"
+            android:onClick="preencherTela" android:tag="3"/>
+
+        <Button
+            android:text="-"
+            android:background="#2e9bbe"
+            android:textColor="#fff"
+            android:layout_weight="2"
+            android:textSize="25sp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnSubtracao"
+            android:onClick="setarOperador" android:tag="-"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <Button
+            android:text="."
+            android:textSize="25sp"
+            android:textColor="#fff"
+            android:background="#2e9bbe"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnPonto"
+            android:onClick="preencherTela" android:tag="."/>
+
+        <Button
+            android:text="0"
+            android:textColor="#fff"
+            android:background="#2e9bbe"
+            android:textSize="25sp"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btn0"
+            android:onClick="preencherTela" android:tag="0"/>
+
+        <Button
+            android:text="="
+            android:textSize="25sp"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnIgual"
+            android:textColor="#fff"
+            android:background="#2e9bbe"
+            android:onClick="btnIgualClick"/>
+
+        <Button
+            android:text="+"
+            android:textSize="25sp"
+            android:textColor="#fff"
+            android:background="#2e9bbe"
+            android:layout_weight="2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:id="@+id/btnSoma"
+            android:onClick="setarOperador" android:tag="+"/>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4"
+            android:src="@drawable/dollargreen"
+            android:id="@+id/imgId"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:hint="Digite aqui o valor em R$"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:inputType="numberDecimal"
+            android:id="@+id/edtValorReal"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Dólar:"
+            android:gravity="left|center"
+            android:textSize="26sp"
+            android:id="@+id/txtDolar"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Valor convertido"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:id="@+id/txtDolarConvertido"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Euro:"
+            android:gravity="left|center"
+            android:textSize="26sp"
+            android:id="@+id/txtEuro"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Valor convertido"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:id="@+id/txtEuroConvertido"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Pesos Argentinos:"
+            android:gravity="left|center"
+            android:textSize="26sp"
+            android:id="@+id/txtPesos"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Valor convertido"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:id="@+id/txtPesosConvertido"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Converter"
+            android:id="@+id/btnConverter"
+            android:onClick="btnConverterClick"/>
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="Limpar"
+            android:id="@+id/btnLimpar"
+            android:onClick="btnLimparClick"/>
+    </LinearLayout>
+    
+    </LinearLayout>

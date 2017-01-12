@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    <LinearLayout
+    xmlns:andriod="http://schemas.android.com/apk/res/android"
+    andriod:layout_width="match_parent"
+    andriod:layout_height="match_parent"
+    andriod:orientation="vertical"
+    andriod:padding="6dp"
+    andriod:gravity="center"
+    andriod:id="@+id/linearLayoutPaiId">
+
+    <LinearLayout
+        andriod:layout_width="match_parent"
+        andriod:layout_height="0dp"
+        andriod:layout_weight="2"
+        andriod:orientation="horizontal"
+        andriod:layout_marginBottom="2dp">
+
+        <LinearLayout
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:orientation="vertical"
+            andriod:background="#000"
+            andriod:layout_marginRight="1dp">
+
+            <TextView
+            andriod:layout_width="match_parent"
+            andriod:layout_height="0dp"
+            andriod:layout_weight="2"
+            andriod:text="Jogador X"
+            andriod:textSize="30sp"
+            andriod:textAlignment="center"
+            andriod:textColor="@android:color/holo_blue_dark"
+            andriod:gravity="center"
+            andriod:id="@+id/txtJogadorX"/>
+            
+            <TextView
+                andriod:layout_width="match_parent"
+                andriod:layout_height="0dp"
+                andriod:layout_weight="2"
+                andriod:text="Vitórias: 0"
+                andriod:textSize="30sp"
+                andriod:textAlignment="center"
+                andriod:textColor="#fff"
+                andriod:gravity="center"
+                andriod:id="@+id/txtQtdVitoriasX"/>
+        </LinearLayout>
+
+        <LinearLayout
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:orientation="vertical"
+            andriod:background="#000"
+            andriod:layout_marginLeft="1dp">
+
+            <TextView
+                andriod:layout_width="match_parent"
+                andriod:layout_height="0dp"
+                andriod:layout_weight="2"
+                andriod:text="Jogador O"
+                andriod:textSize="30sp"
+                andriod:textAlignment="center"
+                andriod:textColor="#ffffff"
+                andriod:gravity="center"
+                andriod:id="@+id/txtJogadorO"/>
+
+            <TextView
+                andriod:layout_width="match_parent"
+                andriod:layout_height="0dp"
+                andriod:layout_weight="2"
+                andriod:text="Vitórias: 0"
+                andriod:textSize="30sp"
+                andriod:textAlignment="center"
+                andriod:textColor="#fff"
+                andriod:gravity="center"
+                andriod:id="@+id/txtQtdVitoriasO"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        andriod:layout_width="match_parent"
+        andriod:layout_height="0dp"
+        andriod:layout_weight="2"
+        andriod:orientation="horizontal"
+        andriod:gravity="center">
+
+        <Button
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:background="#2e9bbe"
+            andriod:text=""
+            andriod:textSize="80sp"
+            andriod:textAlignment="center"
+            andriod:gravity="center"
+            andriod:textColor="#ddd"
+            andriod:id="@+id/btn1"
+            andriod:onClick="btnClick"/>
+
+        <Button
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:background="#2e9bbe"
+            andriod:layout_marginRight="4dp"
+            andriod:layout_marginLeft="4dp"
+            andriod:text=""
+            andriod:textSize="80sp"
+            andriod:textAlignment="center"
+            andriod:gravity="center"
+            andriod:textColor="#ddd"
+            andriod:id="@+id/btn2"
+            andriod:onClick="btnClick"/>
+
+        <Button
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:background="#2e9bbe"
+            andriod:text=""
+            andriod:id="@+id/btn3"
+            andriod:onClick="btnClick"
+            andriod:textSize="80sp"
+            andriod:textAlignment="center"
+            andriod:gravity="center"
+            andriod:textColor="#ddd"/>
+    </LinearLayout>
+
+    <LinearLayout
+        andriod:layout_width="match_parent"
+        andriod:layout_height="0dp"
+        andriod:layout_weight="2"
+        andriod:orientation="horizontal"
+        andriod:gravity="center">
+
+        <Button
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:background="#2e9bbe"
+            andriod:layout_marginTop="4dp"
+            andriod:layout_marginRight="4dp"
+            andriod:layout_marginBottom="4dp"
+            andriod:text=""
+            andriod:id="@+id/btn4"
+            andriod:onClick="btnClick"
+            andriod:textSize="80sp"
+            andriod:textAlignment="center"
+            andriod:gravity="center"
+            andriod:textColor="#ddd"
+            andriod:layout_gravity="center"/>
+
+        <Button
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:background="#2e9bbe"
+            andriod:layout_marginTop="4dp"
+            andriod:layout_marginBottom="4dp"
+            andriod:text=""
+            andriod:id="@+id/btn5"
+            andriod:onClick="btnClick"
+            andriod:textSize="80sp"
+            andriod:textAlignment="center"
+            andriod:gravity="center"
+            andriod:textColor="#ddd"/>
+
+        <Button
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:background="#2e9bbe"
+            andriod:layout_marginTop="4dp"
+            andriod:layout_marginLeft="4dp"
+            andriod:layout_marginBottom="4dp"
+            andriod:text=""
+            andriod:id="@+id/btn6"
+            andriod:onClick="btnClick"
+            andriod:textSize="80sp"
+            andriod:textAlignment="center"
+            andriod:gravity="center"
+            andriod:textColor="#ddd"/>
+    </LinearLayout>
+
+    <LinearLayout
+        andriod:layout_width="match_parent"
+        andriod:layout_height="0dp"
+        andriod:layout_weight="2"
+        andriod:orientation="horizontal"
+        andriod:gravity="center">
+
+        <Button
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:background="#2e9bbe"
+            andriod:text=""
+            andriod:id="@+id/btn7"
+            andriod:onClick="btnClick"
+            andriod:textSize="80sp"
+            andriod:textAlignment="center"
+            andriod:gravity="center"
+            andriod:textColor="#ddd"/>
+
+        <Button
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:background="#2e9bbe"
+            andriod:layout_marginLeft="4dp"
+            andriod:layout_marginRight="4dp"
+            andriod:text=""
+            andriod:id="@+id/btn8"
+            andriod:onClick="btnClick"
+            andriod:textSize="80sp"
+            andriod:textAlignment="center"
+            andriod:gravity="center"
+            andriod:textColor="#ddd"/>
+
+        <Button
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="2"
+            andriod:background="#2e9bbe"
+            andriod:text=""
+            andriod:id="@+id/btn9"
+            andriod:onClick="btnClick"
+            andriod:textSize="80sp"
+            andriod:textAlignment="center"
+            andriod:gravity="center"
+            andriod:textColor="#ddd"/>
+    </LinearLayout>
+
+    <LinearLayout
+        andriod:layout_width="match_parent"
+        andriod:layout_height="0dp"
+        andriod:layout_weight="1"
+        andriod:orientation="horizontal"
+        andriod:gravity="center">
+
+        <LinearLayout
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="1"
+            andriod:orientation="horizontal"
+            andriod:layout_marginRight="1dp">
+
+            <Button
+                andriod:layout_width="match_parent"
+                andriod:layout_height="match_parent"
+                andriod:text="Novo jogo"
+                andriod:textSize="20sp"
+                andriod:textColor="#fff"
+                andriod:background="#000"
+                andriod:onClick="btnNovoJogoClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            andriod:layout_width="0dp"
+            andriod:layout_height="match_parent"
+            andriod:layout_weight="1"
+            andriod:layout_marginLeft="1dp">
+
+            <Button
+                andriod:layout_width="match_parent"
+                andriod:layout_height="match_parent"
+                andriod:text="Sair"
+                andriod:textSize="20sp"
+                andriod:textColor="#fff"
+                andriod:background="#000"
+                andriod:onClick="btnSairClick"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    </LinearLayout>
