@@ -1,0 +1,159 @@
+package com.example.ersan.agenda.dal;
+
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+import com.example.ersan.agenda.model.Compromisso;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class Banco extends SQLiteOpenHelper {
+
+    public static final String NOME_DO_BANCO = "AgendaDb.db";
+    public static final int VERSAO_DO_BANCO = 2;
+
+    public static final String TIPO_TEXTO = " TEXT";
+    public static final String TIPO_INTEIRO = " INTEGER";
+    public static final String TIPO_DATETIME = " ";
+    public static final String VIRGULA = ",";
+
+        public static final String SQL_CRIA_TABELA_COMPROMISSO =
+            "CREATE TABLE IF NOT EXISTS " + Contrato.TabelaCompromisso.NOME_DA_TABELA + " (" +
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_ID + TIPO_INTEIRO + " PRIMARY KEY AUTOINCREMENT " + VIRGULA +
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_TIPO + TIPO_TEXTO + VIRGULA +
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_DESCRICAO + TIPO_TEXTO + VIRGULA +
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_DATA + TIPO_TEXTO + VIRGULA +
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_HORA + TIPO_TEXTO + VIRGULA +
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_HORA_FIM + TIPO_TEXTO + " );";
+
+
+
+    public static final String SQL_DELETAR_TABELAS =
+            "DROP TABLE IF EXISTS " + Contrato.TabelaCompromisso.NOME_DA_TABELA + "; ";
+
+
+    public Banco(Context context) {
+        super(context, NOME_DO_BANCO, null, VERSAO_DO_BANCO);
+    }
+
+
+    @Override
+    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+        Log.v("Criar_Banco", SQL_CRIA_TABELA_COMPROMISSO);
+        sqLiteDatabase.execSQL(SQL_CRIA_TABELA_COMPROMISSO);
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+        Log.v("Atualizar_Banco", SQL_DELETAR_TABELAS);
+        sqLiteDatabase.execSQL(SQL_DELETAR_TABELAS);
+    }
+
+    public long inserirCompromisso(Compromisso c){
+        SQLiteDatabase banco = getWritableDatabase();
+
+        ContentValues registro = new ContentValues();
+
+        registro.put(Contrato.TabelaCompromisso.NOME_DA_COLUNA_TIPO,c.getTipo());
+        registro.put(Contrato.TabelaCompromisso.NOME_DA_COLUNA_DESCRICAO,c.getComplemento());
+        registro.put(Contrato.TabelaCompromisso.NOME_DA_COLUNA_HORA,c.getHora());
+        registro.put(Contrato.TabelaCompromisso.NOME_DA_COLUNA_HORA_FIM,c.getHoraFim());
+        registro.put(Contrato.TabelaCompromisso.NOME_DA_COLUNA_DATA,c.getData());
+
+        return banco.insert(Contrato.TabelaCompromisso.NOME_DA_TABELA, null, registro);
+    }
+
+    public long alterarCompromisso(Integer idCompromissoBd, Compromisso newCom){
+
+        SQLiteDatabase banco = getWritableDatabase();
+        ContentValues registro = new ContentValues();
+        registro.put(Contrato.TabelaCompromisso.NOME_DA_COLUNA_DESCRICAO, newCom.getComplemento().toString());
+        registro.put(Contrato.TabelaCompromisso.NOME_DA_COLUNA_HORA, newCom.getHora().toString());
+        registro.put(Contrato.TabelaCompromisso.NOME_DA_COLUNA_HORA_FIM, newCom.getHoraFim().toString());
+        registro.put(Contrato.TabelaCompromisso.NOME_DA_COLUNA_TIPO, newCom.getTipo().toString());
+        registro.put(Contrato.TabelaCompromisso.NOME_DA_COLUNA_DATA, newCom.getData().toString());
+
+        String selection = Contrato.TabelaCompromisso.NOME_DA_COLUNA_ID + "=" + String.valueOf(idCompromissoBd);
+
+        return banco.update(
+            Contrato.TabelaCompromisso.NOME_DA_TABELA,
+            registro,
+            selection,
+            null
+        );
+    }
+
+    public List<Compromisso> retornarCompromissos(){
+        SQLiteDatabase banco = getWritableDatabase();
+        List<Compromisso> compromissos = new ArrayList<Compromisso>();
+
+        String[] colunas = new String[]{
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_ID,
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_TIPO,
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_DESCRICAO,
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_HORA,
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_DATA,
+            Contrato.TabelaCompromisso.NOME_DA_COLUNA_HORA_FIM
+        };
+
+        String sortOrder = Contrato.TabelaCompromisso.NOME_DA_COLUNA_DATA + "," +
+                Contrato.TabelaCompromisso.NOME_DA_COLUNA_HORA + " ASC";
+        Log.v("SQL", sortOrder.toString());
+
+        Cursor cursor = banco.query(
+            Contrato.TabelaCompromisso.NOME_DA_TABELA,
+            colunas,
+            null,
+            null,
+            null,
+            null,
+            sortOrder
+        );
+
+
+        cursor.moveToFirst();
+
+        if (cursor.getCount()>0){
+            do {
+                Compromisso com = new Compromisso();
+                com.setId(cursor.getInt(0));
+                com.setTipo(cursor.getString(1));
+                com.setComplemento(cursor.getString(2));
+                com.setHora(cursor.getString(3));
+                DateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd");
+                DateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy");
+                String inputDateStr = cursor.getString(4);
+                com.setHoraFim(cursor.getString(5));
+                Date date = new Date();
+                try {
+                    date = inputFormat.parse(inputDateStr);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                String outputDateStr = outputFormat.format(date);
+                com.setData(outputDateStr);
+                compromissos.add(com);
+            }while (cursor.moveToNext());
+            return compromissos;
+        }
+        return null;
+    }
+
+    public void apagarCompromisso(String id){
+        SQLiteDatabase banco = getWritableDatabase();
+        String selection = Contrato.TabelaCompromisso.NOME_DA_COLUNA_ID + " LIKE ?";
+        String[] selectionArgs = {id};
+
+        banco.delete(Contrato.TabelaCompromisso.NOME_DA_TABELA, selection, selectionArgs);
+    }
+}
